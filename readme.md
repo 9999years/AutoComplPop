@@ -183,6 +183,20 @@ this function returns zero.
 If non-zero, the last completion is automatically repeated.
 
 
+### E219 Missing {.
+
+This error is often caused by Vim interpreting a TeX command that ends
+a line as a filename and attempting to complete it. Something like {}
+is invalid in a filename, so it errors. Fix by inserting
+
+    let g:acp_behaviorFileLength = -1
+
+In your [vimrc][12] or a specific [ftplugin][13] (like
+`$VIM/vimfiles/ftplugin/tex.vim`).
+
+See also `g:acp_behaviorFileLength`.
+
+
 ## Further Help
 
 See `:h acp` or [the regular text file in this repository][2]
@@ -223,3 +237,5 @@ AutoComplPop supports [`perl-completion.vim`][4] — To enable popups, set
 [9]: http://vimdoc.sourceforge.net/htmldoc/eval.html#Dictionary
 [10]: http://vimdoc.sourceforge.net/htmldoc/eval.html#Dictionary
 [11]: https://github.com/Valloric/YouCompleteMe
+[12]: http://vimdoc.sourceforge.net/htmldoc/starting.html#vimrc
+[13]: http://vimdoc.sourceforge.net/htmldoc/usr_41.html#ftplugin

@@ -9,6 +9,7 @@ INSTALLATION                    |acp-installation|
 USAGE                           |acp-usage|
 COMMANDS                        |acp-commands|
 OPTIONS                         |acp-options|
+HELP                            |acp-help|
 SPECIAL THANKS                  |acp-thanks|
 CHANGELOG                       |acp-changelog|
 ABOUT                           |acp-about|
@@ -300,6 +301,22 @@ OPTIONS                                                          *acp-options*
         "repeat":                                      *g:acp_behavior-repeat*
           If non-zero, the last completion is automatically repeated.
 
+
+==============================================================================
+HELP                                                                *acp-help*
+
+                                                                 *acp_E219*  >
+  *E219 Missing {.
+<
+        This error is often caused by Vim interpreting a TeX command that ends
+        a line as a filename and attempting to complete it. Something like {}
+        is invalid in a filename, so it errors. Fix by inserting
+>
+   let g:acp_behaviorFileLength = -1
+<
+        In your |vimrc| or a specific |ftplugin|.
+
+        See also |g:acp_behaviorFileLength|.
 
 ==============================================================================
 SPECIAL THANKS                                                    *acp-thanks*
