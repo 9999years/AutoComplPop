@@ -146,6 +146,15 @@ OPTIONS                                                          *acp-options*
 <
         Value set to 'ignorecase' temporarily when auto-popup.
 
+
+				    *g:acp_autoselectFirstCompletionOption*  >
+  let g:acp_autoselectFirstCompletion = 0
+<
+	If 1, the first value is always selected when the popup menu is
+	shown (so that <CR> or <C-y> insert the match). Otherwise, the
+	first item is not selected (like YouCompleteMe) and <Tab> is used
+	to insert the match.
+
                                                      *g:acp_completeOption*  >
   let g:acp_completeOption = '.,w,b,k'
 <
